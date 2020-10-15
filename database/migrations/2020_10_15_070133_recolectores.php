@@ -13,7 +13,15 @@ class Recolectores extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('recolectores', function (Blueprint $table){
+            //ID de la tabla
+            $table->id();   //=$table->bigIncrements('id').
+            $table->string('nombre');
+            $table->string('diasRecoleccion');
+            // NOTA: Quizas pueda ser mejor especificar
+            // los dias en una tabla por cada dia sea una
+            // relacion a la tabla
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class Recolectores extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('recolectores');
     }
 }

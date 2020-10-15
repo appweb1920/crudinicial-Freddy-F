@@ -13,7 +13,16 @@ class PuntosDeReciclaje extends Migration
      */
     public function up()
     {
-        //
+        Schema::create("puntosDeReciclaje", function (Blueprint $table){
+            //ID de la tabla
+            $table->id();   //=$table->bigIncrements('id').
+            $table->string('tipoDeBasura');
+            $table->string('direccion');
+            // NOTA: DUDA, Como influye la precision? 
+            //time(key, precision)
+            $table->time('horaApertura', 0);
+            $table->time('horaCierre', 0);
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class PuntosDeReciclaje extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('puntosDeReciclaje');
     }
 }
