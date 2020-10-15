@@ -24,10 +24,10 @@ class DetalleRecolector extends Migration
             //$table->foreignId('idFK')->constrained('TableReferenced', id='id') //->otherPropieties(...);
             $table->foreignId('idRecolector')
                   ->constrained('recolectores');
-                  //->onDelete('cascade');
+                  //->onDelete('cascade'); #FIXME: Hacer que funcione en una version Fork
             $table->foreignId('idPuntoReciclaje')
                   ->constrained('puntosdereciclaje');
-                  //->onDelete('cascade');
+                  //->onDelete('cascade'); #FIXME: Hacer que funcione en una version Fork
         });
     }
 
