@@ -6,7 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Vista inicial</h1>
-    
+        <h1>Inicio</h1>
+
+        <div>
+            <a href="registraPuntoReciclaje">Registra Punto de Reciclaje</a><br>
+            <a href="registraRecolector">Registra Recolector</a>
+        </div>
+
+        <div>
+            <h2>Puntos de Reciclaje</h2>
+            <!-- TODO: Listar -->
+        </div>
+        <div>
+            <h2>Recolectores</h2>
+            <!-- TODO: Listar -->
+        </div>
+
+        
 </body>
 </html>

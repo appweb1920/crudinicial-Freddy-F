@@ -14,7 +14,9 @@ class recolectores_Controller extends Controller
      */
     public function index()
     {
-        //
+        $recolectores= recolectores::all();
+        //TODO: Ajustar VISTA
+        return view('inicio')->with( 'recolectores', $recolectores);
     }
 
     /**
@@ -35,7 +37,10 @@ class recolectores_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nuevoRecolector = new recolectores();
+        $nuevoRecolector->nombre = $request->nombre;
+        $nuevoRecolector->diasRecoleccion = $request->diasRecoleccion;
+        $nuevoRecolector->save();
     }
 
     /**
@@ -44,9 +49,11 @@ class recolectores_Controller extends Controller
      * @param  \App\recolectores  $recolectores
      * @return \Illuminate\Http\Response
      */
-    public function show(recolectores $recolectores)
+    public function show($id)
     {
-        //
+        $recolector = recolectores::find($id);
+        //TODO: Crear RUTA Y VISTA siguientes
+        return view('detallesRecolector')->with('recolector', $recolector);
     }
 
     /**
@@ -67,9 +74,12 @@ class recolectores_Controller extends Controller
      * @param  \App\recolectores  $recolectores
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, recolectores $recolectores)
+    public function update(Request $request)
     {
-        //
+        $recolector = recolectores::find($request->id);
+        $recolector->nombre = $request->nombre;
+        $recolector->diasRecoleccion = $request->diasRecoleccion;
+        $recolector->save();
     }
 
     /**
@@ -78,8 +88,9 @@ class recolectores_Controller extends Controller
      * @param  \App\recolectores  $recolectores
      * @return \Illuminate\Http\Response
      */
-    public function destroy(recolectores $recolectores)
+    public function destroy($id)
     {
-        //
+        $recolector = recolectores::find($id);
+        $recolector->delete();
     }
 }
