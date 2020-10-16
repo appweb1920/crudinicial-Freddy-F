@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\detalleRecolector;
 use Illuminate\Http\Request;
+use App\recolectores;
+
 
 class detalleRecolector_Controller extends Controller
 {
@@ -33,9 +35,13 @@ class detalleRecolector_Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($idRecolector, $idPunto)
     {
-        //
+        $nuevoRecolector = new detalleRecolector();
+        $nuevoRecolector->idRecolector = $idRecolector;
+        $nuevoRecolector->idPuntoReciclaje = $idPunto;
+        $nuevoRecolector->save();
+        return back();
     }
 
     /**
@@ -44,9 +50,18 @@ class detalleRecolector_Controller extends Controller
      * @param  \App\detalleRecolector  $detalleRecolector
      * @return \Illuminate\Http\Response
      */
-    public function show(detalleRecolector $detalleRecolector)
+    public function show($idRecolector)
     {
-        //
+        $recolector = recolectores::find($idRecolector);
+        // dd($recolector);
+        $puntosAgregados = $recolector->getPuntosRecoleccion();
+        $puntosNoAgregados = $recolector->getNoPuntosRecoleccion();
+        // dd($puntosAgregados);
+        // dd($puntosNoAgregados);
+        return view("verDetallesRecolector")
+            ->with("recolector", $recolector)
+            ->with("puntosAgregados", $puntosAgregados)
+            ->with("puntosNoAgregados", $puntosNoAgregados);
     }
 
     /**
@@ -78,8 +93,13 @@ class detalleRecolector_Controller extends Controller
      * @param  \App\detalleRecolector  $detalleRecolector
      * @return \Illuminate\Http\Response
      */
-    public function destroy(detalleRecolector $detalleRecolector)
+    public function destroy($idRecolector, $idPunto)
     {
-        //
+        $detalleRecolector = detalleRecolector::where([
+            ["idRecolector","=",$idRecolector],
+            ["idPuntoReciclaje", "=", $idPunto]
+            ]);
+        $detalleRecolector->delete();
+        return back();
     }
 }

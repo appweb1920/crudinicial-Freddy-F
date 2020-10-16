@@ -34,12 +34,16 @@ Route::get('/editarRecolector/{id}', 'recolectores_Controller@edit');
 Route::post('/editarPunto/editarPunto', 'puntosDeReciclaje_Controller@update');
 Route::post('/editarRecolector/editarRecolector', 'recolectores_Controller@update');
 
-Route::get('/detallesPunto/{id}', 'puntosDeReciclaje_Controller@show');
+Route::get('/detallesRecolector/recolectores', 'recolectores_Controller@index');
+Route::get('/detallesRecolector/{id}', 'detalleRecolector_Controller@show');
+Route::get('/detallesRecolector/borrarPuntoRecolector/{idRecolector}/{idPunto}', 'detalleRecolector_Controller@destroy');
+Route::get('/detallesRecolector/asignarPuntoRecolector/{idRecolector}/{idPunto}', 'detalleRecolector_Controller@store');
+
 
 /* TODO: AGREGAR: 
 -[x] CRUD de cada uno "PUNTOS","RECOLECTORES"(Crear, R?, Update, Delete)
 -[x] PANTALLAS DE CREACION ("PUNTOS","RECOLECTORES")
 -[x] PANTALLAS DE LISTADO ("PUNTOS","RECOLECTORES")
--[] PANTALLAS DE EDICION ("PUNTOS","RECOLECTORES")
+-[x] PANTALLAS DE EDICION ("PUNTOS","RECOLECTORES")
 -[] En la PANTALLAS DE LISTADO ("RECOLECTOR") agregar "Detalles" se permite agregar CREAR UNA RELACION ("RECOLECTORES" -> "PUNTOS")
  */

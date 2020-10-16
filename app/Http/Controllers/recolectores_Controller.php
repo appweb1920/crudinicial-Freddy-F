@@ -53,7 +53,6 @@ class recolectores_Controller extends Controller
     public function show($id)
     {
         $recolector = recolectores::find($id);
-        //TODO: Crear RUTA Y VISTA siguientes
         return view('detallesRecolector')->with('recolector', $recolector);
     }
 

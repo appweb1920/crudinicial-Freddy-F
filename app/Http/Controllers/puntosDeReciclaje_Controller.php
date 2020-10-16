@@ -55,9 +55,8 @@ class puntosDeReciclaje_Controller extends Controller
      */
     public function show($id)
     {
-        $puntoReciclaje = puntosDeReciclaje::find($id);
-        //TODO: Crear RUTA Y VISTA siguientes
-        return view('detallesPuntoReciclaje')->with('puntoReciclaje', $puntoReciclaje);
+        // $puntoReciclaje = puntosDeReciclaje::find($id);
+        // return view('detallesPuntoReciclaje')->with('puntoReciclaje', $puntoReciclaje);
     }
 
     /**

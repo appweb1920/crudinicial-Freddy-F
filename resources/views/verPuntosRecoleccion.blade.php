@@ -15,7 +15,7 @@
             <li>{{$p->tipoDeBasura}} | 
                 {{$p->direccion}} | 
                 {{$p->horaApertura}} - {{$p->horaCierre}} 
-                <a href="detallesPunto/{{$p->id}}">Detalles</a> 
+                <!-- <a href="detallesPunto/{{$p->id}}">Detalles</a>  -->
                 <a href="editarPunto/{{$p->id}}">Editar</a> 
                 <a href="borrarPunto/{{$p->id}}">Borrar </a>
             </li>
