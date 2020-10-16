@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class detalleRecolector extends Model
 {
-    protected $table = "alumnos";
-    //protected $fillable = ["idRecolector","idPuntoReciclaje"];
+    protected $table = "detallesRecolector";
+    protected $fillable = ["idRecolector","idPuntoReciclaje"];
 }

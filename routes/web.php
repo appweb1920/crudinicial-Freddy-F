@@ -22,10 +22,24 @@ Route::post('/guardaPuntoReciclaje', 'puntosDeReciclaje_Controller@store');
 Route::get('/registraRecolector', function () { return view('registraRecolector'); });
 Route::post('/guardaRecolector', 'recolectores_Controller@store');
 
+Route::get('/puntosRecoleccion', 'puntosDeReciclaje_Controller@index');
+Route::get('/recolectores', 'recolectores_Controller@index');
+
+Route::get('/borrarPunto/{id}', 'puntosDeReciclaje_Controller@destroy');
+Route::get('/borrarRecolector/{id}', 'recolectores_Controller@destroy');
+
+Route::get('/editarPunto/{id}', 'puntosDeReciclaje_Controller@edit');
+Route::get('/editarRecolector/{id}', 'recolectores_Controller@edit');
+
+Route::post('/editarPunto/editarPunto', 'puntosDeReciclaje_Controller@update');
+Route::post('/editarRecolector/editarRecolector', 'recolectores_Controller@update');
+
+Route::get('/detallesPunto/{id}', 'puntosDeReciclaje_Controller@show');
+
 /* TODO: AGREGAR: 
-- CRUD de cada uno "PUNTOS","RECOLECTORES"(Crear, R?, Update, Delete)
-- PANTALLAS DE CREACION ("PUNTOS","RECOLECTORES")
-- PANTALLAS DE LISTADO ("PUNTOS","RECOLECTORES")
-- PANTALLAS DE EDICION ("PUNTOS","RECOLECTORES")
-- En la PANTALLAS DE LISTADO ("RECOLECTOR") agregar "Detalles" se permite agregar CREAR UNA RELACION ("RECOLECTORES" -> "PUNTOS")
+-[x] CRUD de cada uno "PUNTOS","RECOLECTORES"(Crear, R?, Update, Delete)
+-[x] PANTALLAS DE CREACION ("PUNTOS","RECOLECTORES")
+-[x] PANTALLAS DE LISTADO ("PUNTOS","RECOLECTORES")
+-[] PANTALLAS DE EDICION ("PUNTOS","RECOLECTORES")
+-[] En la PANTALLAS DE LISTADO ("RECOLECTOR") agregar "Detalles" se permite agregar CREAR UNA RELACION ("RECOLECTORES" -> "PUNTOS")
  */

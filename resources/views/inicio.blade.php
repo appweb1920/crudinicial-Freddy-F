@@ -13,15 +13,9 @@
             <a href="registraRecolector">Registra Recolector</a>
         </div>
 
-        <div>
-            <h2>Puntos de Reciclaje</h2>
-            <!-- TODO: Listar -->
-        </div>
-        <div>
-            <h2>Recolectores</h2>
-            <!-- TODO: Listar -->
-        </div>
+        <br>
+        <h2><a href="puntosRecoleccion">Ver Puntos de Reciclaje</a></h2>
+        <h2><a href="recolectores">Ver Recolectores</a></h2>
 
-        
 </body>
 </html>
