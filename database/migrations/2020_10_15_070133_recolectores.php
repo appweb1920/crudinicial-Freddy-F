@@ -21,6 +21,7 @@ class Recolectores extends Migration
             // NOTA: Quizas pueda ser mejor especificar
             // los dias en una tabla por cada dia sea una
             // relacion a la tabla
+            $table->timestamps();
         });
     }
 

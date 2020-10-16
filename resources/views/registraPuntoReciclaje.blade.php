@@ -11,7 +11,7 @@
 
     <form action="guardaPuntoReciclaje" method="post">
     @csrf
-        <input type="text" name="tipoBasura" placeholder="tipoBasura">
+        <input type="text" name="tipoDeBasura" placeholder="tipoDeBasura">
         <input type="text" name="direccion" placeholder="direccion">
         <input type="text" name="horaApertura" placeholder="horaApertura">
         <input type="text" name="horaCierre" placeholder="horaCierre">

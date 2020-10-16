@@ -39,11 +39,13 @@ class puntosDeReciclaje_Controller extends Controller
     public function store(Request $request)
     {
         $nuevoPunto = new puntosDeReciclaje();
-        $nuevoPunto->tipoBasura = $request->tipoBasura;
+        $nuevoPunto->tipoDeBasura = $request->tipoDeBasura;
         $nuevoPunto->direccion = $request->direccion;
         $nuevoPunto->horaApertura = $request->horaApertura;
         $nuevoPunto->horaCierre = $request->horaCierre;
         $nuevoPunto->save();
+
+        return view('inicio');
     }
 
     /**

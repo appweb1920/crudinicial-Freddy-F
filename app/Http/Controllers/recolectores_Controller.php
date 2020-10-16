@@ -41,6 +41,7 @@ class recolectores_Controller extends Controller
         $nuevoRecolector->nombre = $request->nombre;
         $nuevoRecolector->diasRecoleccion = $request->diasRecoleccion;
         $nuevoRecolector->save();
+        return view('inicio');
     }
 
     /**

@@ -28,6 +28,7 @@ class DetalleRecolector extends Migration
             $table->foreignId('idPuntoReciclaje')
                   ->constrained('puntosdereciclaje');
                   //->onDelete('cascade'); #FIXME: Hacer que funcione en una version Fork
+            $table->timestamps();
         });
     }
 

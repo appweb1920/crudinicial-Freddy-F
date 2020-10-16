@@ -22,6 +22,7 @@ class PuntosDeReciclaje extends Migration
             //time(key, precision)
             $table->time('horaApertura', 0);
             $table->time('horaCierre', 0);
+            $table->timestamps();
         });
     }
 
