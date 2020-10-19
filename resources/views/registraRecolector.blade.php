@@ -11,8 +11,8 @@
 
     <form action="guardaRecolector" method="post">
     @csrf
-        <input type="text" name="nombre" placeholder="nombre">
-        <input type="text" name="diasRecoleccion" placeholder="diasRecoleccion">
+        <input type="text" name="nombre" placeholder="nombre" size="50">
+        <input type="text" name="diasRecoleccion" placeholder="diasRecoleccion ('LMXJVSD')" size="30">
         <input type="submit" value="Registrar">
     </form>
 

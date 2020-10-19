@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome'); });
 Route::get('/inicio', function () { return view('inicio'); });
+Route::get('/testBoostrap', function () { return view('boostrapTests'); });
+Route::get('/testMaterial', function () { return view('materialCSSTests'); });
 
 Route::get('/registraPuntoReciclaje', function () { return view('registraPuntoReciclaje'); });
 Route::post('/guardaPuntoReciclaje', 'puntosDeReciclaje_Controller@store');
