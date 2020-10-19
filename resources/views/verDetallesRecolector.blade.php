@@ -16,7 +16,7 @@
     
     <nav>
         <div class="green darken-3 nav-wrapper">
-            <a href="inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+            <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
             <div>
                 <ul class="right">
                     <li><a href="/recolectores">
@@ -37,7 +37,7 @@
             <h3>Datos del recolector</h3>
             <p><b>Nombre: </b> {{$recolector->nombre}} | 
             <b>Dias de recolección:</b>{{$recolector->diasRecoleccion}} <br>
-            <a href="recolectores">Volver a lista de recolectores</a> 
+            <a href="/recolectores">Volver a lista de recolectores</a> 
             </p>
             
             <h3>Puntos de recoleccion asignados</h3>

@@ -27,7 +27,7 @@
     
     <nav>
         <div class="green darken-3 nav-wrapper">
-            <a href="inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+            <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
             <div>
                 <ul class="right">
                     <li><a href="/recolectores">
@@ -49,28 +49,28 @@
         <div class="row">
             
             <div class="col s4">
-                <a href="recolectores" class="grey-text text-darken-3">
+                <a href="/recolectores" class="grey-text text-darken-3">
                     <i class="large material-icons">people</i><br>
                     <p>Ver Recolectores</p>
                 </a>
             </div>
 
             <div class="col s4">
-                <a href="puntosRecoleccion" class="grey-text text-darken-3">
+                <a href="/puntosRecoleccion" class="grey-text text-darken-3">
                     <i class="large material-icons">map</i><br>
                     <p>Ver Puntos de Reciclaje</p>
                 </a>
             </div>
 
             <div class="col s4">
-                <a href="registraRecolector" class="grey-text text-darken-3">
+                <a href="/registraRecolector" class="grey-text text-darken-3">
                     <i class="large material-icons">person_add</i><br>
                     <p>Registra Recolector</p>
                 </a>
             </div>
             
             <div class="col s4">
-                <a href="registraPuntoReciclaje" class="grey-text text-darken-3">
+                <a href="/registraPuntoReciclaje" class="grey-text text-darken-3">
                     <i class="large material-icons">place</i><br>
                     <p>Registra Punto de Reciclaje</p>
                 </a>

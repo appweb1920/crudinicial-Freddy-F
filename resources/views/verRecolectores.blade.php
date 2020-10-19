@@ -16,7 +16,7 @@
     
     <nav>
         <div class="green darken-3 nav-wrapper">
-            <a href="inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+            <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
             <div>
                 <ul class="right">
                     <li><a href="/recolectores">
@@ -34,7 +34,7 @@
 
     <div class="container">
         <h1>Recolectores:</h1>
-        <a href="inicio">Volver</a>
+        <a href="/inicio">Volver</a>
         <p><b>Nombre | Dias de recolección</b></p>
         <ul>
         @if( !is_null($recolectores) )

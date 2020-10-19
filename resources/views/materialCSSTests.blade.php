@@ -27,7 +27,7 @@
     
     <nav>
         <div class="green darken-3 nav-wrapper">
-            <a href="inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+            <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
             <div>
                 <ul class="right">
                     <li><a href="recolectores">
