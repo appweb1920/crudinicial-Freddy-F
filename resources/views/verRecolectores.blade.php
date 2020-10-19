@@ -35,20 +35,32 @@
     <div class="container">
         <h1>Recolectores:</h1>
         <a href="/inicio">Volver</a>
-        <p><b>Nombre | Dias de recolección</b></p>
-        <ul>
-        @if( !is_null($recolectores) )
-            @foreach($recolectores as $r)
-                <li>
-                    {{$r->nombre}} | {{$r->diasRecoleccion}} 
-                    <a href="detallesRecolector/{{$r->id}}">Detalles</a> 
-                    <a href="editarRecolector/{{$r->id}}">Editar</a> 
-                    <a href="borrarRecolector/{{$r->id}}">Borrar</a>
-                </li>
-                
-            @endforeach
-        @endif
-        </ul>
+
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Nombre del Recolector</th>
+                    <th>Días de recolección</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if( !is_null($recolectores) )
+                    @foreach($recolectores as $r)
+                        <tr>
+                            <td>{{$r->nombre}}</td>
+                            <td>{{$r->diasRecoleccion}}</td>
+                            <td>
+                                <a href="detallesRecolector/{{$r->id}}" class="waves-effect waves-light btn-small blue-grey darken-1">Detalles</a>
+                                <a href="editarRecolector/{{$r->id}}" class="waves-effect waves-light btn-small amber">Editar</a> 
+                                <a href="borrarRecolector/{{$r->id}}" class="waves-effect waves-light btn-small red darken-1">Borrar</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
+            </tbody>
+        </table>
     </div>
+
 </body>
 </html>

@@ -11,7 +11,7 @@ form{
 
 }
 
-input[type=submit]{
+/* input[type=submit]{
     background-color: #000000;
     border: none;
     color: white;
@@ -24,4 +24,4 @@ input[type=submit]{
 
 input[type=submit]:hover{
     background-color: #494949;
-}
+} */
