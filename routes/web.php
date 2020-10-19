@@ -33,17 +33,17 @@ Route::get('/borrarRecolector/{id}', 'recolectores_Controller@destroy');
 
 
 /*FIXME: PARCHES TEMPORALES (para "editarPunto"): (VER DETALLES EN LA PARTE DETALLADA MÁS ABAJO) */
-Route::get('/editarPunto/inicio', function () { return redirect('inicio'); });
-Route::get('/editarPunto/recolectores', function () { return redirect('recolectores'); });
-Route::get('/editarPunto/puntosRecoleccion', function () { return redirect('puntosRecoleccion'); });
-Route::get('/editarPunto/registraRecolector', function () { return redirect('registraRecolector'); });
-Route::get('/editarPunto/registraPuntoReciclaje', function () { return redirect('registraPuntoReciclaje'); });
+// Route::get('/editarPunto/inicio', function () { return redirect('inicio'); });
+// Route::get('/editarPunto/recolectores', function () { return redirect('recolectores'); });
+// Route::get('/editarPunto/puntosRecoleccion', function () { return redirect('puntosRecoleccion'); });
+// Route::get('/editarPunto/registraRecolector', function () { return redirect('registraRecolector'); });
+// Route::get('/editarPunto/registraPuntoReciclaje', function () { return redirect('registraPuntoReciclaje'); });
 /*FIXME: PARCHES TEMPORALES (para "editarPunto"): (VER DETALLES EN LA PARTE DETALLADA MÁS ABAJO) */
-Route::get('/editarRecolector/inicio', function () { return redirect('inicio'); });
-Route::get('/editarRecolector/recolectores', function () { return redirect('recolectores'); });
-Route::get('/editarRecolector/puntosRecoleccion', function () { return redirect('puntosRecoleccion'); });
-Route::get('/editarRecolector/registraRecolector', function () { return redirect('registraRecolector'); });
-Route::get('/editarRecolector/registraPuntoReciclaje', function () { return redirect('registraPuntoReciclaje'); });
+// Route::get('/editarRecolector/inicio', function () { return redirect('inicio'); });
+// Route::get('/editarRecolector/recolectores', function () { return redirect('recolectores'); });
+// Route::get('/editarRecolector/puntosRecoleccion', function () { return redirect('puntosRecoleccion'); });
+// Route::get('/editarRecolector/registraRecolector', function () { return redirect('registraRecolector'); });
+// Route::get('/editarRecolector/registraPuntoReciclaje', function () { return redirect('registraPuntoReciclaje'); });
 
 Route::get('/editarPunto/{id}', 'puntosDeReciclaje_Controller@edit');
 Route::get('/editarRecolector/{id}', 'recolectores_Controller@edit');
@@ -59,11 +59,11 @@ Route::post('/editarRecolector/editarRecolector', 'recolectores_Controller@updat
   NOTA: #2 Este conjunto de rutas deben estar ANTES DE LAS DE ABAJO , de lo contrario no funcionan.
         FIXME: ¿Como influye el orden de declaracion de rutas en el enrutamiento?
 */
-Route::get('/detallesRecolector/inicio', function () { return redirect('inicio'); });
-Route::get('/detallesRecolector/recolectores', function () { return redirect('recolectores'); });
-Route::get('/detallesRecolector/puntosRecoleccion', function () { return redirect('puntosRecoleccion'); });
-Route::get('/detallesRecolector/registraRecolector', function () { return redirect('registraRecolector'); });
-Route::get('/detallesRecolector/registraPuntoReciclaje', function () { return redirect('registraPuntoReciclaje'); });
+// Route::get('/detallesRecolector/inicio', function () { return redirect('inicio'); });
+// Route::get('/detallesRecolector/recolectores', function () { return redirect('recolectores'); });
+// Route::get('/detallesRecolector/puntosRecoleccion', function () { return redirect('puntosRecoleccion'); });
+// Route::get('/detallesRecolector/registraRecolector', function () { return redirect('registraRecolector'); });
+// Route::get('/detallesRecolector/registraPuntoReciclaje', function () { return redirect('registraPuntoReciclaje'); });
 
 Route::get('/detallesRecolector/{id}', 'detalleRecolector_Controller@show');
 Route::get('/detallesRecolector/borrarPuntoRecolector/{idRecolector}/{idPunto}', 'detalleRecolector_Controller@destroy');
