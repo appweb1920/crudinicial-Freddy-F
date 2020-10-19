@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link rel="stylesheet" href="misEstilos.css">
     <title>Document</title>
 </head>
 <body class="blue-grey lighten-5">
@@ -31,41 +31,46 @@
             </div>
         </div>
     </nav>
-    @if( !is_null($recolector) )
-        <h1>Datos del recolector</h1>
-        <p><b>Nombre: </b> {{$recolector->nombre}} | 
-           <b>Dias de recolección:</b>{{$recolector->diasRecoleccion}} <br>
-           <a href="recolectores">Volver a lista de recolectores</a> 
-        </p>
-        
-        <h1>Puntos de recoleccion asignados</h1>
-        @if( is_null($puntosAgregados) ) <p>Ninguno disponible </p>  @endif
-        <!-- Agregar puntos -->
-        <!-- Buequeda con el id recolector y todos sus puntos -->
-        <ul>
-        @foreach($puntosAgregados as $p)
-            <li>{{$p->tipoDeBasura}} | 
-                {{$p->direccion}} | 
-                {{$p->horaApertura}} - {{$p->horaCierre}} 
-                <a href="borrarPuntoRecolector/{{$recolector->id}}/{{$p->id}}">Eliminar</a> 
-            </li>
-        @endforeach
-        </ul>
 
-        <h1>Agregar nuevo punto de recoleccicón</h1>
-        @if( is_null($puntosNoAgregados) ) <p>Ninguno disponible </p>  @endif
-        <!-- Agregar puntos -->
-        <!-- Buequeda con el id recolector sin todos sus puntos -->
-        <ul>
-        @foreach($puntosNoAgregados as $p)
-            <li>{{$p->tipoDeBasura}} | 
-                {{$p->direccion}} | 
-                {{$p->horaApertura}} - {{$p->horaCierre}} 
-                <a href="asignarPuntoRecolector/{{$recolector->id}}/{{$p->id}}">Asignar</a> 
-            </li>
-        @endforeach
-        </ul>
+    <div class="container">
+        @if( !is_null($recolector) )
+            <h3>Datos del recolector</h3>
+            <p><b>Nombre: </b> {{$recolector->nombre}} | 
+            <b>Dias de recolección:</b>{{$recolector->diasRecoleccion}} <br>
+            <a href="recolectores">Volver a lista de recolectores</a> 
+            </p>
+            
+            <h3>Puntos de recoleccion asignados</h3>
+            <p><b>Tipo | Direccion | Apertura - Cierre</b></p>
+            @if( is_null($puntosAgregados) ) <p>Ninguno disponible </p>  @endif
+            <!-- Agregar puntos -->
+            <!-- Buequeda con el id recolector y todos sus puntos -->
+            <ul>
+            @foreach($puntosAgregados as $p)
+                <li>{{$p->tipoDeBasura}} | 
+                    {{$p->direccion}} | 
+                    {{$p->horaApertura}} - {{$p->horaCierre}} 
+                    <a href="borrarPuntoRecolector/{{$recolector->id}}/{{$p->id}}">Eliminar</a> 
+                </li>
+            @endforeach
+            </ul>
 
-    @endif
+            <h3>Agregar nuevo punto de recoleccicón</h3>
+            <p><b>Tipo | Direccion | Apertura - Cierre</b></p>
+            @if( is_null($puntosNoAgregados) ) <p>Ninguno disponible </p>  @endif
+            <!-- Agregar puntos -->
+            <!-- Buequeda con el id recolector sin todos sus puntos -->
+            <ul>
+            @foreach($puntosNoAgregados as $p)
+                <li>{{$p->tipoDeBasura}} | 
+                    {{$p->direccion}} | 
+                    {{$p->horaApertura}} - {{$p->horaCierre}} 
+                    <a href="asignarPuntoRecolector/{{$recolector->id}}/{{$p->id}}">Asignar</a> 
+                </li>
+            @endforeach
+            </ul>
+
+        @endif
+    </div>
 </body>
 </html>

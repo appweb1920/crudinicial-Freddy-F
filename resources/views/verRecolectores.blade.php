@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link rel="stylesheet" href="misEstilos.css">
     <title>Document</title>
 </head>
 <body class="blue-grey lighten-5">
@@ -32,21 +32,23 @@
         </div>
     </nav>
 
-    <h1>Recolectores:</h1>
-    <a href="inicio">Volver</a>
-    <p><b>Nombre | Dias de recolección</b></p>
-    <ul>
-    @if( !is_null($recolectores) )
-        @foreach($recolectores as $r)
-            <li>
-                {{$r->nombre}} | {{$r->diasRecoleccion}} 
-                <a href="detallesRecolector/{{$r->id}}">Detalles</a> 
-                <a href="editarRecolector/{{$r->id}}">Editar</a> 
-                <a href="borrarRecolector/{{$r->id}}">Borrar</a>
-            </li>
-            
-        @endforeach
-    @endif
-    </ul>
+    <div class="container">
+        <h1>Recolectores:</h1>
+        <a href="inicio">Volver</a>
+        <p><b>Nombre | Dias de recolección</b></p>
+        <ul>
+        @if( !is_null($recolectores) )
+            @foreach($recolectores as $r)
+                <li>
+                    {{$r->nombre}} | {{$r->diasRecoleccion}} 
+                    <a href="detallesRecolector/{{$r->id}}">Detalles</a> 
+                    <a href="editarRecolector/{{$r->id}}">Editar</a> 
+                    <a href="borrarRecolector/{{$r->id}}">Borrar</a>
+                </li>
+                
+            @endforeach
+        @endif
+        </ul>
+    </div>
 </body>
 </html>

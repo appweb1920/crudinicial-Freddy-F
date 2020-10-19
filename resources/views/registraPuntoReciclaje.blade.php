@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link rel="stylesheet" href="misEstilos.css">
     
     <title>Document</title>
 </head>
@@ -34,17 +34,18 @@
         </div>
     </nav>
 
-    <h1>Registra Punto de Reciclaje</h1>
+    <div class="container">
+        <h1>Registra Punto de Reciclaje</h1>
 
 
-    <form action="guardaPuntoReciclaje" method="post">
-    @csrf
-        <input type="text" name="tipoDeBasura" placeholder="tipoDeBasura">
-        <input type="text" name="direccion" placeholder="direccion">
-        <input type="text" name="horaApertura" placeholder="horaApertura">
-        <input type="text" name="horaCierre" placeholder="horaCierre">
-        <input type="submit" value="Registrar">
-    </form>
-
+        <form action="guardaPuntoReciclaje" method="post">
+        @csrf
+            <input type="text" name="tipoDeBasura" placeholder="tipoDeBasura">
+            <input type="text" name="direccion" placeholder="direccion">
+            <input type="text" name="horaApertura" placeholder="horaApertura">
+            <input type="text" name="horaCierre" placeholder="horaCierre">
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
 </body>
 </html>

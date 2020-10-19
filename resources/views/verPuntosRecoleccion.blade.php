@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link rel="stylesheet" href="misEstilos.css">
     <title>Document</title>
 </head>
 <body class="blue-grey lighten-5">
@@ -32,21 +32,23 @@
         </div>
     </nav>
 
-    <h1>Puntos De Recoleccion:</h1>
-    <a href="inicio">Volver</a>
-    <p><b>Tipo | Direccion | Apertura - Cierre</b></p>
-    <ul>
-    @if( !is_null($puntosReciclaje) )
-        @foreach($puntosReciclaje as $p)
-            <li>{{$p->tipoDeBasura}} | 
-                {{$p->direccion}} | 
-                {{$p->horaApertura}} - {{$p->horaCierre}} 
-                <!-- <a href="detallesPunto/{{$p->id}}">Detalles</a>  -->
-                <a href="editarPunto/{{$p->id}}">Editar</a> 
-                <a href="borrarPunto/{{$p->id}}">Borrar </a>
-            </li>
-        @endforeach
-    @endif
-    </ul>
+    <div class="container">
+        <h3>Puntos De Recoleccion:</h3>
+        <a href="inicio">Volver</a>
+        <p><b>Tipo | Direccion | Apertura - Cierre</b></p>
+        <ul>
+        @if( !is_null($puntosReciclaje) )
+            @foreach($puntosReciclaje as $p)
+                <li>{{$p->tipoDeBasura}} | 
+                    {{$p->direccion}} | 
+                    {{$p->horaApertura}} - {{$p->horaCierre}} 
+                    <!-- <a href="detallesPunto/{{$p->id}}">Detalles</a>  -->
+                    <a href="editarPunto/{{$p->id}}">Editar</a> 
+                    <a href="borrarPunto/{{$p->id}}">Borrar </a>
+                </li>
+            @endforeach
+        @endif
+        </ul>
+    </div>
 </body>
 </html>

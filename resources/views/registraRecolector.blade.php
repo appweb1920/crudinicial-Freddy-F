@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="misEstilos.css">
     <title>Document</title>
 </head>
 <body class="blue-grey lighten-5">
@@ -31,15 +31,18 @@
             </div>
         </div>
     </nav>
-    <h1>Registra Recolector</h1>
+
+    <div class="container">
+        <h1>Registra Recolector</h1>
 
 
-    <form action="guardaRecolector" method="post">
-    @csrf
-        <input type="text" name="nombre" placeholder="nombre" size="50">
-        <input type="text" name="diasRecoleccion" placeholder="diasRecoleccion ('LMXJVSD')" size="30">
-        <input type="submit" value="Registrar">
-    </form>
+        <form action="guardaRecolector" method="post">
+        @csrf
+            <input type="text" name="nombre" placeholder="nombre" size="50">
+            <input type="text" name="diasRecoleccion" placeholder="diasRecoleccion ('LMXJVSD')" size="30">
+            <input type="submit" value="Registrar">
+        </form>
+    </div>
 
 </body>
 </html>

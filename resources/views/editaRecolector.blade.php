@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
             
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="misEstilos.css">
     <title>Document</title>
 </head>
 <body class="blue-grey lighten-5">
@@ -32,17 +32,19 @@
         </div>
     </nav>
 
-    <h1>Registra Recolector</h1>
+    <div class="container">
+        <h1>Registra Recolector</h1>
 
-    @if( !is_null($recolector) )
-    <form action="editarRecolector" method="post">
-    @csrf
-        <input type="hidden" name="id" value="{{$recolector->id}}">
-        <input type="text" name="nombre" value="{{$recolector->nombre}}" placeholder="nombre">
-        <input type="text" name="diasRecoleccion" value="{{$recolector->diasRecoleccion}}" placeholder="diasRecoleccion">
-        <input type="submit" value="Guardar cambios">
-    </form>
-    <!-- <a href="recolectores">Volver</a> -->
-    @endif
+        @if( !is_null($recolector) )
+        <form action="editarRecolector" method="post">
+        @csrf
+            <input type="hidden" name="id" value="{{$recolector->id}}">
+            <input type="text" name="nombre" value="{{$recolector->nombre}}" placeholder="nombre">
+            <input type="text" name="diasRecoleccion" value="{{$recolector->diasRecoleccion}}" placeholder="diasRecoleccion">
+            <input type="submit" value="Guardar cambios">
+        </form>
+        <!-- <a href="recolectores">Volver</a> -->
+        @endif
+    </div>
 </body>
 </html>
