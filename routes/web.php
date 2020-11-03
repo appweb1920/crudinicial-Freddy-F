@@ -42,3 +42,16 @@ Route::get('/detallesRecolector/borrarPuntoRecolector/{idRecolector}/{idPunto}',
 Route::get('/detallesRecolector/asignarPuntoRecolector/{idRecolector}/{idPunto}', 'detalleRecolector_Controller@store');
 
 
+/* TODO:  TAREA:
+
+Modificar CRUD Anterior:
+[] Agregar autenticacion con Roles
+	-[] Tipo 1 -Admin: Puede crear cosas
+	-[] Tipo 2 Lector: El lector puede ver la lista
+    -[] null solo se podrá registrar.
+
+*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
