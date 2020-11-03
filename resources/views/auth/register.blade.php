@@ -10,6 +10,29 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        
+                        <!-- FIXME: Este campo debe ser solo para que los administradores asignen privilegios, 
+                            pero inicialmente asumimos que puede no existir un administrador al crear las migraciones
+                            para eso se permite un registro en la BD especificando el tipo de usuario.
+                            NOTA: Lo mejor sería que solo el primer usuario registrado se vuelva administrador 
+                                  y el pueda cambiar los roles de admin al resto que no lo son.
+                         -->
+                        <div class="form-group row">
+                            <label for="tipoUsuario" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de Usuario (esto no es correcto)') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="tipoUsuario" id="tipoUsuario" class="form-control @error('tipoUsuario') is-invalid @enderror">
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Lector</option>
+                                </select>
+                                <p class="gray-text">(Se asume que inicialemnte no existe ningun tipo de usuario en la BD, por eso en este caso agregamos esta opción temporal)</p>
+                                @error('tipoUsuario')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
