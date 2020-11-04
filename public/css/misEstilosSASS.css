@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/*====================================================
+ Esta es solo una prueba de estilos en SASS.
+
+ Su agregación al proyecto fue declarada en el 
+ archivo: "<proyecto>/webpack.mix.js"
+
+ Aqui se especifican estilos en formato SASS 
+ (similar a CSS pero con mas cosas).
+
+ NOTA: Lo que agreguemos/cambiemos aquí será compliado
+       y guardado remplazando lo que exista en 
+       el archivo .CSS del mismo nombre.
+
+ Para compilar usar: "npm run dev" o "npm run watch"
+====================================================*/
+
+/* Esta es una linea de prueba creada en misEstilosSASS.scss */
+

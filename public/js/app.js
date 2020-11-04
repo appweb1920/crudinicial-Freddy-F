@@ -49868,6 +49868,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/less/misEstilosLESS.less":
+/*!********************************************!*\
+  !*** ./resources/less/misEstilosLESS.less ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -49879,15 +49890,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/misEstilosSASS.scss":
+/*!********************************************!*\
+  !*** ./resources/sass/misEstilosSASS.scss ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/less/misEstilosLESS.less ./resources/sass/app.scss ./resources/sass/misEstilosSASS.scss ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\laragon\www\CRUD-inicial-2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\CRUD-inicial-2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\CRUD-inicial-2\resources\less\misEstilosLESS.less */"./resources/less/misEstilosLESS.less");
+__webpack_require__(/*! C:\laragon\www\CRUD-inicial-2\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\laragon\www\CRUD-inicial-2\resources\sass\misEstilosSASS.scss */"./resources/sass/misEstilosSASS.scss");
 
 
 /***/ })
