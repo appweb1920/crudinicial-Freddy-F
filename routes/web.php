@@ -45,13 +45,18 @@ Route::get('/detallesRecolector/asignarPuntoRecolector/{idRecolector}/{idPunto}'
 /* TODO:  TAREA:
 
 Modificar CRUD Anterior:
-[] Agregar autenticacion con Roles
-	-[] Tipo 1 -Admin: Puede crear cosas
-	-[] Tipo 2 Lector: El lector puede ver la lista
-    -[] null solo se podrá registrar.
-
+[X] Agregar autenticacion con Roles
+	-[] Devolver el rol del usuario al ingresar
+	-[] Mostrar controles según rol
+		-[] Tipo 1 -Admin: Puede crear cosas
+		-[] Tipo 2 Lector: El lector puede ver la lista
+		-[] null solo se podrá registrar.
+	-[] Restringir accesos según roles.
 */
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Pruebas con layout
+// Route::get('/testLayout', function () { return view('testLayout'); });
