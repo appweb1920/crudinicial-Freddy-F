@@ -29,13 +29,11 @@
                             </div>
                         </div> -->
 
+                        <!-- NOTA: Indicar el nombre de usuario para acceder -->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('User Name') }}</label>
 
                             <div class="col-md-6">
-                                <!-- NOTA: La linea se modifica para usar el nombre de usuario ('name) en lugar del email -->
-                                <!-- <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> -->
-                                <!-- Se modifica el  "type" "name" y se borran: <... required autocomplete="email" autofocus ...>  -->
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}">
 
                                 @error('name')

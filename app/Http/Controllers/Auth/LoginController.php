@@ -52,9 +52,19 @@ class LoginController extends Controller
         
         // dd($user); //Nos permite ver si  los datos llegan correctamente
         if (is_null($user->tipoUsuario))
-            $redirectTo = '/inicio';
+            $redirectTo = '/register';
         else
-            $redirectTo = '/home';
+            switch ($user->tipoUsuario) {
+                case 1:
+                    $redirectTo = '/inicio'; //Administrador
+                    break;
+                case 2: 
+                    $redirectTo = '/inicio'; //Lector
+                    break;
+                default:
+                    $redirectTo = '/home';
+                    break;
+            }
         
         return $redirectTo;
     }

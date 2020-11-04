@@ -27,7 +27,12 @@
     
     <nav>
         <div class="green darken-3 nav-wrapper">
-            <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+            <div class="left">
+                <a href="/login" class=""><b>Iniciar</b></a> /
+                <a href="/register" class=""><b>Registrar</b></a>
+                <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+            </div>
+            
             <div>
                 <ul class="right">
                     <li><a href="/recolectores">
