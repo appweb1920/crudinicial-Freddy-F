@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome'); });
 Route::get('/inicio', function () { return view('inicio'); });
+// Route::get('/inicio/Admin/{id}', 'Auth\LoginController@paginaInicio');
+// Route::get('/inicio/Lector/{id}', 'Auth\LoginController@paginaInicio');
+// Route::get('/inicio/{id}', 'Auth\LoginController@paginaInicio');
+// Route::get('/inicio', 'Auth\LoginController@paginaInicio');
 
 Route::get('/testBoostrap', function () { return view('boostrapTests'); });
 Route::get('/testMaterial', function () { return view('materialCSSTests'); });
@@ -46,17 +50,18 @@ Route::get('/detallesRecolector/asignarPuntoRecolector/{idRecolector}/{idPunto}'
 
 Modificar CRUD Anterior:
 [X] Agregar autenticacion con Roles
-	-[] Devolver el rol del usuario al ingresar
-	-[] Mostrar controles según rol
-		-[] Tipo 1 -Admin: Puede crear cosas
-		-[] Tipo 2 Lector: El lector puede ver la lista
-		-[] null solo se podrá registrar.
-	-[] Restringir accesos según roles.
+	-[X] Mostrar controles según rol
+		-[X] Tipo 1 -Admin: Puede crear cosas
+		-[X] Tipo 2 Lector: El lector puede ver la lista
+		-[X] null solo se podrá registrar.
+	-¿[X]? Restringir accesos según roles. -> FIXME: Usar Middleware
 */
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 //Pruebas con layout
 // Route::get('/testLayout', function () { return view('testLayout'); });

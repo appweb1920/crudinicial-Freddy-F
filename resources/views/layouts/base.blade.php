@@ -17,33 +17,51 @@
 
 </head>
 <body class="blue-grey lighten-5">
-    
-    <!-- BARRA DE NAVEGACION -->
-    <nav>
-        <div class="green darken-3 nav-wrapper">
-            <div class="left">
-                <a href="/login" class=""><b>Iniciar</b></a> /
-                <a href="/register" class=""><b>Registrar</b></a>
-                <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
-            </div>
-            
-            <div>
-                <ul class="right">
-                    <li><a href="/recolectores">
-                        <i class="material-icons left">people</i>Recolectores</a></li>
-                    <li><a href="/puntosRecoleccion">
-                        <i class="material-icons left">map</i>Puntos de Reciclaje</a></li>
-                    <li><a href="/registraRecolector">
-                        <i class="material-icons left">person_add</i>Nuevo Recolector</a></li>
-                    <li><a href="/registraPuntoReciclaje">
-                        <i class="material-icons left">place</i>Nuevo Punto de Reciclaje</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @guest
+        <script>
+            window.location.replace("/home");
+        </script>
+    @else
+        <!-- BARRA DE NAVEGACION -->
+        <nav>
+            <div class="green darken-3 nav-wrapper">
+                <div class="left">
+                    <a href="/inicio" class="left brand-logo"><i>  </i><b>S. Recolección de Basura</b></a>
+                </div>
+                
+                <div>
+                    <ul class="right">
+                    @if(Auth::user()->tipoUsuario == 1 || Auth::user()->tipoUsuario == 2)
+                        <li><a href="/recolectores">
+                            <i class="material-icons left">people</i>Recolectores</a></li>
+                        <li><a href="/puntosRecoleccion">
+                            <i class="material-icons left">map</i>Puntos de Reciclaje</a></li>
+                    @endif
+                    @if(Auth::user()->tipoUsuario == 1)
+                        <li><a href="/registraRecolector">
+                            <i class="material-icons left">person_add</i>Nuevo Recolector</a></li>
+                        <li><a href="/registraPuntoReciclaje">
+                            <i class="material-icons left">place</i>Nuevo Punto de Reciclaje</a></li>
+                    @endif
 
-    @yield('contenido')
+                    @if(Auth::user()->tipoUsuario == 1 || Auth::user()->tipoUsuario == 2)
+                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Salir</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none" hidden>
+                                @csrf
+                            </form>
+                        </li>
+                    @endif
+                    </ul>
+                </div>
+            
+            </div>
+        </nav>
+
+        @yield('contenido')
     
+    @endguest
 
 </body>
 </html>

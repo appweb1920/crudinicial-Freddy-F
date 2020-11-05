@@ -1,10 +1,9 @@
 @extends('layouts.base')
 
 @section('contenido')
-
+    @if(Auth::user()->tipoUsuario == 1)
     <div class="container">
-        <h1>Registra Punto de Reciclaje</h1>
-
+        <h3>Registra Punto de Reciclaje</h3>
 
         <form action="guardaPuntoReciclaje" method="post">
         @csrf
@@ -15,5 +14,5 @@
             <input type="submit" value="Registrar" class="waves-effect waves-light btn-small">
         </form>
     </div>
-
+    @endif
 @endsection

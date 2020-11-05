@@ -50,21 +50,12 @@ class LoginController extends Controller
     {
         $user = Auth::user();
         
-        // dd($user); //Nos permite ver si  los datos llegan correctamente
+        //dd($user); //Nos permite ver si  los datos llegan correctamente
         if (is_null($user->tipoUsuario))
             $redirectTo = '/register';
         else
-            switch ($user->tipoUsuario) {
-                case 1:
-                    $redirectTo = '/inicio'; //Administrador
-                    break;
-                case 2: 
-                    $redirectTo = '/inicio'; //Lector
-                    break;
-                default:
-                    $redirectTo = '/home';
-                    break;
-            }
+            // $redirectTo = '/inicio/'.$user->tipo;
+            $redirectTo = '/inicio';
         
         return $redirectTo;
     }

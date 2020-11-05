@@ -23,8 +23,10 @@
                             <td>{{$p->direccion}}</td>
                             <td>{{$p->horaApertura}} - {{$p->horaCierre}} </td>
                             <td>
+                                @if(Auth::user()->tipoUsuario == 1)
                                 <a href="editarPunto/{{$p->id}}" class="waves-effect waves-light btn-small amber">Editar</a>
                                 <a href="borrarPunto/{{$p->id}}" class="waves-effect waves-light btn-small red darken-1">Borrar </a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

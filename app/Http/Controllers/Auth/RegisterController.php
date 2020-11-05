@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+// NOTA: Necesatio para obtener el usuario -> Auth::user()
+use Illuminate\Support\Facades\Auth;
+
 class RegisterController extends Controller
 {
     /*
@@ -29,7 +32,29 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo;
+
+    public function username(Type $var = null)
+    {
+        return 'name';
+    }
+
+    //El nombre de la función debe ser "redirectTo()"
+    public function redirectTo(Type $var = null)
+    {
+        $user = Auth::user();
+        
+        //dd($user); //Nos permite ver si  los datos llegan correctamente
+        if (is_null($user->tipoUsuario))
+            $redirectTo = '/register';
+        else
+            // $redirectTo = '/inicio/'.$user->tipo;
+            $redirectTo = '/inicio';
+        
+        return $redirectTo;
+    }
+
+
 
     /**
      * Create a new controller instance.

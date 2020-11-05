@@ -1,9 +1,9 @@
 @extends('layouts.base')
 
 @section('contenido')
-
+    @if(Auth::user()->tipoUsuario == 1)
     <div class="container">
-        <h1>Registra Recolector</h1>
+        <h3>Registra Recolector</h3>
 
         @if( !is_null($recolector) )
         <form action="editarRecolector" method="post">
@@ -15,5 +15,5 @@
         </form>
         @endif
     </div>
-
+    @endif
 @endsection

@@ -26,9 +26,11 @@
                             <td>{{$p->tipoDeBasura}}</td>
                             <td>{{$p->direccion}}</td>
                             <td>{{$p->horaApertura}} - {{$p->horaCierre}} </td>
+                            @if(Auth::user()->tipoUsuario == 1)
                             <td><a href="borrarPuntoRecolector/{{$recolector->id}}/{{$p->id}}"
                                     class="waves-effect waves-light btn-small red darken-1">Remover punto</a> 
                             </td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>
@@ -51,9 +53,11 @@
                             <td>{{$p->tipoDeBasura}}</td>
                             <td>{{$p->direccion}}</td>
                             <td>{{$p->horaApertura}} - {{$p->horaCierre}} </td>
+                            @if(Auth::user()->tipoUsuario == 1)
                             <td><a href="asignarPuntoRecolector/{{$recolector->id}}/{{$p->id}}"
                                     class="waves-effect waves-light btn-small">Asignar punto</a> 
                             </td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>

@@ -1,9 +1,9 @@
 @extends('layouts.base')
 
 @section('contenido')
-
+    @if(Auth::user()->tipoUsuario == 1)
     <div class="container">
-        <h1>Registra Punto de Reciclaje</h1>
+        <h3>Edita Punto de Reciclaje</h3>
 
         @if( !is_null($puntoReciclaje) )
             <form action="editarPunto" method="post">
@@ -17,5 +17,5 @@
             </form>
         @endif
     </div>
-    
+    @endif
 @endsection
